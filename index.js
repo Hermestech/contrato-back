@@ -22,6 +22,10 @@ app.use(cors());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
+app.get('/', (req, res) => {
+    res.send('Hello world!')
+})
+
 app.post('/create-pdf', (req, res) => {
     pdf.create(pdfTemplate(req.body), options).toFile('result.pdf', (err) => {
         if(err) {
