@@ -10,7 +10,12 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 let options = {
-    format: 'Legal'
+    format: 'Legal',
+    border: {
+        top: "2.0cm",
+        bottom: "2.5cm"
+    }
+    
 }
 
 app.use(cors());

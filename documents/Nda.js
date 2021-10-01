@@ -8,37 +8,69 @@ module.exports = ({dsActor, rpLegalActor, parteActor, dsResistente, rpLegalResis
 <head>
     <meta charset="UTF-8">
    <title>Document</title>
+   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap');
+       *{
+           margin: 2%;
+           padding: 0;
+           font-family: 'Montserrat', sans-serif;
+           font-size: small;
+           text-align: justify;
+       }
+       html {
+           zoom: 0.90;
+       }
+       .antecedentes h4{
+           margin-left: 37%;
+       }
+       .clausulas h4 {
+
+           margin-left: 40%;
+       }
+       li{
+           margin-left:7%;
+       }
+
+       .footer{
+           margin-top: 5%;
+           margin-bottom: 10%;
+       }
+       .firmas{
+           margin-left: 66%;
+       }
+
+   </style>
 </head>
 <body>
 <header>
-<h4>CONVENIO DE CONFIDENCIALIDAD QUE CELEBRAN POR UNA PARTE ${dsActor} REPRESENTADA EN ESTE ACTO POR ${rpLegalActor}, EN LO    SUCESIVO
-    DENOMINADO${parteActor} Y, POR OTRA ${dsResistente}, REPRESENTADA EN ESTE ACTOR POR ${rpLegalResistente}, EN LO SUCESIVO DENOMINADO ${parteResistente}, QUIENES SE OBLIGAN AL TENOR DE LOS SIGUIENTES ATENCEDENTES, DECLARACIONES Y CLÁUSULAS.</h4>
+<h4>CONVENIO DE CONFIDENCIALIDAD QUE CELEBRAN POR UNA PARTE ${dsActor.toUpperCase()} REPRESENTADA EN ESTE ACTO POR ${rpLegalActor.toUpperCase()}, EN LO    SUCESIVO
+    DENOMINADO ${parteActor.toUpperCase()} Y, POR OTRA ${dsResistente.toUpperCase()}, REPRESENTADA EN ESTE ACTOR POR ${rpLegalResistente.toUpperCase()}, EN LO SUCESIVO DENOMINADO ${parteResistente.toUpperCase()}, QUIENES SE OBLIGAN AL TENOR DE LOS SIGUIENTES ATENCEDENTES, DECLARACIONES Y CLÁUSULAS.</h4>
     <br/>
     
 </header>
-<div class='antecendetes'>
+<div class='antecedentes'>
 <h4>ANTECEDENTES</h4>
-<p> <b>UNICO</b>.- Ambas partes están por iniciar diversas pláticas para poder celebrar un contrato de prestación de servicios ${Servicios} y/o llevar a cabo una alianza comercial o proyecto en conjunto.</p>
+<p> <b>UNICO</b>.- Ambas partes están por iniciar diversas pláticas para poder celebrar un contrato de prestación de servicios enfocados en: <b>${Servicios}</b> y/o llevar a cabo una alianza comercial o proyecto en conjunto.</p>
 <h4>DECLARACIONES</h4>
 </div>
 
 <section class='declaraciones'>
 
 <article class='declaraciones__Actor'>
-<p>DECLARA ${parteActor}, A TRAVÉS DE SU REPRESENTANTE LEGAL:</p>
+<p>DECLARA <b>${parteActor}</b>, A TRAVÉS DE SU REPRESENTANTE LEGAL:</p>
 <ol type="A">
     <li>Ser una persona moral legalmente constituida con base en las leyes vigentes de la República Mexicana, con la capacidad técnica y jurídica para la celebración del presente contrato;</li>
-    <li>Que su domicilio, para los efectos del presente contrato, es el ubicado en ${domicilioActor}. Así mismo, que su dirección de correo electrónico oficial, para los efectos del presente contrato, es la denominada:${emailActor}</li>
+    <li>Que su domicilio, para los efectos del presente contrato, es el ubicado en <b>${domicilioActor}.</b> Así mismo, que su dirección de correo electrónico oficial, para los efectos del presente contrato, es la denominada:<b>${emailActor}</b></li>
     <li>Que su representante legal cuenta con todas las facultades necesarias para la celebración de este acto y que las mismas no le han sido revocadas o en forma alguna modificadas con anterioridad a la celebración de este convenio y;</li>
     <li>Que es su voluntad celebrar el presente convenio</li>
 </ol>
 </article>
 
 <article class='declaraciones__Resistente'>
-<p>DECLARA ${parteResistente}, A TRAVÉS DE SU REPRESENTANTE LEGAL:</p>
+<p>DECLARA <b>${parteResistente}</b>, A TRAVÉS DE SU REPRESENTANTE LEGAL:</p>
     <ol type="A">
         <li>Ser una persona moral legalmente constituida con base en las leyes vigentes de la República Mexicana, con la capacidad técnica y jurídica para la celebración del presente contrato;</li>
-        <li>Que su domicilio, para los efectos del presente contrato, es el ubicado en ${domicilioResistente}. Así mismo, que su dirección de correo electrónico oficial, para los efectos del presente contrato, es la denominada:${emailResistente}</li>
+        <li>Que su domicilio, para los efectos del presente contrato, es el ubicado en <b> ${domicilioResistente}.</b> Así mismo, que su dirección de correo electrónico oficial, para los efectos del presente contrato, es la denominada:<b>${emailResistente}</b></li>
         <li>Que su representante legal cuenta con todas las facultades necesarias para la celebración de este acto y que las mismas no le han sido revocadas o en forma alguna modificadas con anterioridad a la celebración de este convenio y;</li>
         <li>Que es su voluntad celebrar el presente convenio</li>
     </ol>
@@ -94,24 +126,30 @@ tal efecto los certificados y firmas generadas a través del aplicativo electró
 consultable en la página de internet identificada con el nombre de dominio www.hellosign.com, reconociendo las
 partes su validez transfronteriza, en términos del artículo 114 del Código de Comercio.</p>
 <p><b>DÉCIMA TERCERA.-</b>Para la interpretación, cumplimiento y resolución de cualquier conflicto o controversia relacionada con el presente convenio, las partes convienen sujetarse a las leyes vigentes y tribunales competentes en la Ciudad de México, Estados Unidos Mexicanos, renunciando las partes a cualquier fuero o competencia que pudiere corresponderles en el futuro, incluso por razón de territorio.</p>
-<p><b>HABIENDO LEÍDO EN SU TOTALIDAD EL PRESENTE DOCUMENTO Y HABIENDO MANIFESTADO SU COMPRENSIÓN PLENA DEL CONTENIDO, VALOR Y ALCANCES LEGALES DEL MISMO, PROCEDEN A FIRMARLO EL DÍA ${`${today.getDate()}. ${today.getMonth() + 1}. ${today.getFullYear()}.`}.</b></p>
+<article class="footer">
+<p><b>HABIENDO LEÍDO EN SU TOTALIDAD EL PRESENTE DOCUMENTO Y HABIENDO MANIFESTADO SU COMPRENSIÓN PLENA DEL CONTENIDO, VALOR Y ALCANCES LEGALES DEL MISMO, PROCEDEN A FIRMARLO EL DÍA ${`${today.getDate()}. ${today.getMonth() + 1}. ${today.getFullYear()}.`}</b></p>
+
+</article>
 </section>
 <section class='firmas'>
 <article class='firma_actor'>
 ______________________
-<p>${dsActor}</p>
-<p>${rpLegalActor}</p>
+<b><p>${dsActor.toUpperCase()}</p></b>
+<b><p>${rpLegalActor}</p></b>
+
 </article>
 <br/>
+<br>
+<br>
 <article class='firma_resistente'>
 ______________________
-<p>${dsResistente}</p>
-<p>${rpLegalResistente}</p>
+<b><p>${dsResistente.toUpperCase()}</p></b>
+<b><p>${rpLegalResistente}</p></b>
+
 </article>
 </section>
 
     
     
 </body>
-</html>`
-}
+</html>`}
