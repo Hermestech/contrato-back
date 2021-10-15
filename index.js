@@ -3,7 +3,6 @@ const bodyParser = require('body-parser');
 const pdf = require('html-pdf');
 const cors = require('cors');
 
-const pdfTemplate = require('./documents/Nda');
 
 const app = express();
 
@@ -22,18 +21,30 @@ app.use(cors());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-app.get('/', (req, res) => {
-    res.send('Hello world!')
+app.get('/documents/:name', (req, res) => {
+    const { name } = req.params;
+    
+    res.send(`Hola ${name}`)
 })
 
-app.post('/create-pdf', (req, res) => {
-    pdf.create(pdfTemplate(req.body), options).toFile('result.pdf', (err) => {
-        if(err) {
-            res.send(Promise.reject());
-        }
+app.post('/create-pdf/:name', (req, res) => {
+    const { name } = req.params;
 
-        res.send(Promise.resolve());
-    });
+    const pdfTemplate = require(`./documents/${name}`);
+
+    try {
+        pdf.create(pdfTemplate(req.body), options).toFile('result.pdf', (err) => {
+            if(err) {
+                res.send(Promise.reject());
+            }
+    
+            res.send(Promise.resolve());
+        });
+        
+    } catch (error) {
+        console.error(error)   
+    }
+    
 });
 
 app.get('/fetch-pdf', (req, res) => {
