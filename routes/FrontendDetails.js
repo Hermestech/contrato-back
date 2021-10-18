@@ -3,8 +3,12 @@ const contracts = require('../Data/data')
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-    res.json(contracts);
+router.get('/',  (req, res) => {
+    try {
+         res.json(contracts);
+    } catch (error) {
+        console.error(error);
+    }
 })
 
 module.exports = router;

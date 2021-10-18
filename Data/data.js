@@ -41,6 +41,11 @@ const contracts = [
         id: id,
         name: "Aviso de Privacidad de Asistentes",
         details: "Documento que tiene las caracterísitcas del tratamiento de datos personales de cualquier asistente a panel o conferencia."
+    },
+    {
+        id: id,
+        name: "Nda",
+        details: "Acuerdo de confidencialidad."
     }
 ]
 
