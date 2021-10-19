@@ -6,12 +6,14 @@ const contracts = [
     {
         id: uuidv4(),
         name: "No Disclosure Agreement (NDA)",
+        form_name: "FormNda",
         details: "Acuerdo de confidencialidad.",
         image: image 
     },
     {
         id: uuidv4(),
         name: "Servicios Independientes (PM-PF)",
+        form_name: "FormSpPmPf",
         details: "Contrato para la contratación de personal que se dedica al desarrollo o venta de productos de una persona moral.",
         image: image        
     },
