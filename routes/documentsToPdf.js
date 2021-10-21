@@ -23,7 +23,7 @@ router.post('/create-pdf/:name', (req, res) => {
     const pdfTemplate = require(`../documents/${name}`);
 
     try {
-        pdf.create(pdfTemplate(req.body), options).toFile('result.pdf', (err) => {
+        pdf.create(pdfTemplate(req.body), options).toFile(`${__dirname}/result.pdf`, (err) => {
             if(err) {
                 res.send(Promise.reject());
             }
